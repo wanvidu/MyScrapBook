@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Register</title>
+        <link rel="stylesheet" href="../css/registerstyle.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+            crossorigin="anonymous">
+    </head>
+
+    <body style="max-width: 1300px; margin-left: auto; margin-right: auto">
+        <div class="container">
+
+            <div class="header">
+                <img src="../images/topblack.jpg" alt="header">
+            </div>
+
+            <div class="nav">
+                <a href="../pure html/index.html">Home</a>
+                <a href="../pure html/login.html">Scrapbook</a>
+                <a href="#">Community</a>
+                <a href="#" class="activeNav">Register</a>
+                <a href="#">About us</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Create a Profile
+                </div>
+                <div class="card-body">
+                    <div>
+                        <form action="" name="myForm" onSubmit="return formValidation();" novalidate>
+                            <div class="form-row">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Your Name.." autofocus>
+                                <small>Enter Valid Name</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Nike Name</label>
+                                <input type="text" placeholder="Your Nike Name..">
+                                <small>Enter Valid Nike Name</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Your Email Address..">
+                                <small>Enter Valid Email Address</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Contact Number</label>
+                                <input type="text" placeholder="Your Contact Number..">
+                                <small>Enter Valid Contact Number</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Gender</label>
+                                <div class="radio">
+                                    <input type="radio" name="r" id="r1">Male
+                                    <input type="radio" name="r" id="r2">Female
+                                </div>
+                                <small>Choose One</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Password</label>
+                                <div class="flex-container">
+                                    <div style="flex-grow: 11">
+                                        <input type="password" id="password-field" placeholder="Enter Password...">
+                                    </div>
+                                    <div style="flex-grow: 1">
+                                        <button type="button" onClick="viewPassword('password-field','pass-status')">
+                                            <i id="pass-status" class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <small>Enter Valid Password</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Confirm Password</label>
+                                <div class="flex-container">
+                                    <div style="flex-grow: 11">
+                                        <input type="password" id="con-password-field" placeholder="Re-Enter Password...">
+                                    </div>
+                                    <div style="flex-grow: 1">
+                                        <button type="button" onClick="viewPassword('con-password-field','con-pass-status')">
+                                            <i id="con-pass-status" class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <small>Passwords not Matching</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Country</label>
+                                <select name="drop" id="drop">
+                                    <option value="Default">Choose One...</option>
+                                    <option value="SriLanka">SriLanka</option>
+                                    <option value="India">India</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <small>Select One from the List</small>
+                            </div>
+
+                            <div class="form-row">
+                                <label>Interests</label>
+                                <div class="check" id="check">
+                                    <input type="checkbox" name="" id="c1"> Photography
+                                    <br>
+                                    <input type="checkbox" name="" id="c2"> Cartoons
+                                    <br>
+                                    <input type="checkbox" name="" id="c3"> Meme
+                                    <br>
+                                    <input type="checkbox" name="" id="c4"> Other
+                                </div>
+                                <small>Check at least One Checkbox</small>
+                            </div>
+
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                Google 2018
+            </div>
+        </div>
+
+        <script>
+            var e = document.getElementsByTagName( "small" );
+
+            for ( let i = 0; i < e.length; i++ ) {
+                e[ i ].style.display = "none";
+            }
+
+            var input = document.getElementsByTagName( "input" );
+
+
+            function formValidation() {
+                var checkList = [
+                    validateFName(),
+                    validateNName(),
+                    validateEmail(),
+                    validatePhone(),
+                    validatePassword(),
+                    validateConPassword(),
+                    validateSex(),
+                    selectCountry(),
+                    selectHobby()
+                ];
+
+                console.log( checkList );
+
+                var check = true;
+
+                for ( let i = 0; i < checkList.length; i++ ) {
+                    if ( !checkList[ i ] ) {
+                        check = false;
+                        break;
+                    }
+                }
+
+                if ( !check ) {
+                    var firstErrorIndex = 0;
+
+                    for ( let i = 0; i < ( checkList.length ) - 3; i++ ) {
+                        if ( !checkList[ i ] ) {
+                            firstErrorIndex = i;
+                            break;
+                        }
+                    }
+
+                    setFocus( firstErrorIndex );
+                }
+
+                if ( check ) {
+                    var dis = confirm( "Do you want to submit this form?" );
+
+                    if ( !dis ) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            function validateFName() {
+                var fName = input[ 0 ].value;
+
+                if ( fName == null || fName == "" || !( /^[A-z\s]+$/.test( fName ) ) ) {
+                    e[ 0 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 0 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function validateNName() {
+                var nName = input[ 1 ].value;
+
+                if ( nName == null || nName == "" || !( /^[A-z ]+$/.test( nName ) ) ) {
+                    e[ 1 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 1 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function validateEmail() {
+                var email = input[ 2 ].value;
+
+                if ( email == null || email == "" || !( /^\S+@\S+\.\S+$/.test( email ) ) ) {
+                    e[ 2 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 2 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function validatePhone() {
+                var num = input[ 3 ].value;
+
+                if ( num == null || num == "" || !( /^\d{10}$/.test( num ) ) ) {
+                    e[ 3 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 3 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function validateSex() {
+                if ( document.getElementById( "r1" ).checked || document.getElementById( "r2" ).checked ) {
+                    e[ 4 ].style.display = "none";
+                    return true;
+                } else {
+                    e[ 4 ].style.display = "block";
+                    return false;
+                }
+            }
+
+            function validatePassword() {
+                var num = document.getElementById( "password-field" ).value;
+                if ( num == null || num == "" || !( /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/.test( num ) ) ) {
+                    e[ 5 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 5 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function validateConPassword() {
+                var num = document.getElementById( "con-password-field" ).value;
+                if ( num == null || num == "" || !( /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/.test( num ) ) || num !=
+                    document.getElementById( "password-field" ).value ) {
+                    e[ 6 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 6 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function selectCountry() {
+                var ucountry = document.getElementById( "drop" );
+                if ( ucountry.value == "Default" ) {
+                    e[ 7 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 7 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function selectHobby() {
+                var ch = document.getElementById( "check" ).getElementsByTagName( "input" );
+
+                var boo = false;
+
+                for ( let i = 0; i < ch.length; i++ ) {
+                    if ( ch[ i ].checked ) {
+                        boo = true;
+                        break;
+                    }
+                }
+
+                if ( !boo ) {
+                    e[ 8 ].style.display = "block";
+                    return false;
+                } else {
+                    e[ 8 ].style.display = "none";
+                    return true;
+                }
+            }
+
+            function viewPassword( ele, stat ) {
+                var passwordInput = document.getElementById( ele );
+                var passStatus = document.getElementById( stat );
+
+                if ( passwordInput.type == "password" ) {
+                    passwordInput.type = "text";
+                    passStatus.className = "fas fa-eye-slash";
+
+                } else {
+                    passwordInput.type = "password";
+                    passStatus.className = "fas fa-eye";
+                }
+            }
+
+            function setFocus( index ) {
+                if ( input[ index ].select ) {
+                    input[ index ].select();
+                }
+                input[ index ].focus();
+            }
+
+        </script>
+    </body>
+
+</html>

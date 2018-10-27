@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body style="max-width: 1300px; margin-left: auto; margin-right: auto">
+        <div class="container">
+
+            <div class="header">
+                <img src="../images/topblack.jpg" alt="header">
+            </div>
+
+            <div class="nav">
+                <a href="#" class="activeNav">Home</a>
+                <a href="../pure html/login.html">Scrapbook</a>
+                <a href="#">Community</a>
+                <a href="../pure html/register.html">Register</a>
+                <a href="#">About us</a>
+            </div>
+            <div class="slideshow">
+                <div class="slide fade">
+                    <img src="../images/1.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/2.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/3.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/4.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/5.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/6.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/7.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/8.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/9.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/10.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/11.jpg" alt="slide">
+                </div>
+                <div class="slide fade">
+                    <img src="../images/12.jpg" alt="slide">
+                </div>
+
+                <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlide(1)">&#10095;</a>
+
+            </div>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+            </div>
+            <div class="post-body">
+                My Scrapbook is a website to embellish your talents.
+                <a href="../pure html/register.html">Create a profile</a> and share your creations. Rate and review others creations and let the world know how
+                talented you are.
+            </div>
+            <div class="card">
+                <div class="card-group">
+                    <div class="card-body">
+                        <img src="../images/1.png" alt="1">
+                        <div class="card-text" id="c1">Step One :
+                            <br> Create your profile
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <img src="../images/2.png" alt="1">
+                        <div class="card-text" id="c2">Step Two :
+                            <br> Upload Content
+                        </div>
+                    </div>
+                </div>
+                <div class="card-group">
+                    <div class="card-body">
+                        <img src="../images/3.png" alt="1">
+                        <div class="card-text" id="c3">Step Three :
+                            <br> Publish Content
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <img src="../images/4.png" alt="1">
+                        <div class="card-text" id="c4">Step Four :
+                            <br> Review and Comment</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                Google 2018
+            </div>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+
+            showSlides( slideIndex );
+
+            function plusSlide( n ) {
+                showSlides( slideIndex += n );
+            }
+
+            function currentSlide( n ) {
+                showSlides( slideIndex = n );
+            }
+
+            function showSlides( n ) {
+                var slideCount = document.getElementsByClassName( "slide" );
+                var dotCount = document.getElementsByClassName( "dot" );
+
+                if ( n > slideCount.length ) {
+                    slideIndex = 1;
+                }
+                if ( n < 1 ) {
+                    slideIndex = slideCount.length;
+                }
+                for ( let i = 0; i < slideCount.length; i++ ) {
+                    slideCount[ i ].style.display = "none";
+                }
+                for ( let i = 0; i < dotCount.length; i++ ) {
+                    dotCount[ i ].className = dotCount[ i ].className.replace( " active", "" )
+                }
+
+                slideCount[ slideIndex - 1 ].style.display = "block";
+
+                dotCount[ slideIndex - 1 ].className += " active";
+            }
+
+        </script>
+    </body>
+
+</html>

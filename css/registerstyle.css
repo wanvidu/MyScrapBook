@@ -1,0 +1,177 @@
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.header {
+    width: 100%;
+    background-color: black;
+}
+
+.header img {
+    width: 100%;
+}
+
+.nav {
+    overflow: hidden;
+    background-color: #3fb0ac;
+}
+
+.nav a {
+    float: left;
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color .3s;
+}
+
+.activeNav {
+    background-color: tomato;
+}
+
+.nav a:hover:not(.activeNav) {
+    background-color: seagreen;
+}
+
+.card {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 5px;
+    background-color: rgb(51, 102, 255);
+    padding: 20px;
+}
+
+.card-header {
+    color: white;
+    font-size: 35px;
+    padding: 10px 0px;
+}
+
+.card-body {
+    margin-top: 20px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+small {
+    color: red;
+}
+
+label {
+    color: white;
+}
+
+input[type=text],
+input[type=email],
+select {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid grey;
+}
+
+.flex-container {
+    display: flex;
+}
+
+input[type=password] {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 4px 0 0 4px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid grey;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px 0px;
+    background: darkgray;
+    color: white;
+    font-size: 18px;
+    border: 1px solid grey;
+    cursor: pointer;
+    margin: 8px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.radio {
+    margin: 10px;
+    color: white;
+}
+
+.check {
+    margin: 10px;
+    color: white;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 25px;
+    height: 25px;
+}
+
+input[type=submit],
+input[type=reset] {
+    display: block;
+    width: 60%;
+    background-color: #009933;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background-color: rgb(200, 67, 54);
+}
+
+.footer {
+    padding: 40px;
+    text-align: center;
+    background-color: #3fb0ac;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 660px) {
+    .nav a {
+        float: none;
+        width: 100%;
+        font-size: 15px;
+        padding: 7px 0px;
+    }
+    .card {
+        width: 90%;
+        margin: 20px auto;
+        box-shadow: 0px 5px 5px grey;
+    }
+    button {
+        font-size: 15px;
+        padding: 14px 20px 13px 20px;
+    }
+    input[type=submit] {
+        width: 100%;
+    }
+}

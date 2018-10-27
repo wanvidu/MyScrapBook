@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/tablestyle.css">
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td colspan="5">
+                    <img src="../images/topblack.jpg" alt="Top Image" style="width: 100%; height: auto;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <div id="nav">
+
+                        <div>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </div>
+                        <div>
+                            <a href="index.html">
+                                ScrapBook
+                            </a>
+                        </div>
+                        <div>
+                            <a href="index.html">
+                                Community
+                            </a>
+                        </div>
+                        <div>
+                            <a href="index.html">
+                                Register
+                            </a>
+                        </div>
+                        <div>
+                            <a href="index.html">
+                                About Us
+                            </a>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <div class="slideshow-container" style="position: relative;">
+
+                        <div class="mySlides fade">
+                            <img src="../images/1.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/2.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/3.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/4.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/5.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/6.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/7.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/8.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/9.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/10.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/11.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="../images/12.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlide(1)">&#10095;</a>
+
+                    </div>
+                    <br>
+
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                        <span class="dot" onclick="currentSlide(8)"></span>
+                        <span class="dot" onclick="currentSlide(9)"></span>
+                        <span class="dot" onclick="currentSlide(10)"></span>
+                        <span class="dot" onclick="currentSlide(11)"></span>
+                        <span class="dot" onclick="currentSlide(12)"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: center;">
+                    <h2>My Scrapbook is a website to embellish your talents.
+                        <a href="register.html">Create a profile</a> and share your creations. Rate and review others creations and let the world
+                        know how talented you are.</h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <div id="card">
+                        <div class="card-body">
+                            <img src="../images/1.png" alt="image1">
+                            <h2>
+                                Step One :
+                                <br> Create your profile
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <img src="../images/2.png" alt="image2">
+                            <h2>
+                                Step Two :
+                                <br> Upload Content
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <img src="../images/3.png" alt="image3">
+                            <h2>
+                                Step Three :
+                                <br> Publish Content
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <img src="../images/4.png" alt="image4">
+                            <h2>
+                                Step Four :
+                                <br> Review and Comment
+                            </h2>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            var slideIndex = 1;
+            showSlides( slideIndex );
+
+            function plusSlide( n ) {
+                showSlides( slideIndex += n );
+            }
+
+            function currentSlide( n ) {
+                showSlides( slideIndex = n );
+            }
+
+            function showSlides( n ) {
+                var i;
+                var slides = document.getElementsByClassName( "mySlides" );
+                var dots = document.getElementsByClassName( "dot" );
+                if ( n > slides.length ) {
+                    slideIndex = 1
+                }
+                if ( n < 1 ) {
+                    slideIndex = slides.length
+                }
+                for ( i = 0; i < slides.length; i++ ) {
+                    slides[ i ].style.display = "none";
+                }
+                for ( i = 0; i < dots.length; i++ ) {
+                    dots[ i ].className = dots[ i ].className.replace( " active", "" );
+                }
+                slides[ slideIndex - 1 ].style.display = "block";
+                dots[ slideIndex - 1 ].className += " active";
+            }
+
+        </script>
+
+    </body>
+
+</html>
